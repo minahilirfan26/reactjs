@@ -1,0 +1,5 @@
+node_modudles
+build 
+dist
+.DS_Store
+.env
