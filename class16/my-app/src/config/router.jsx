@@ -15,8 +15,6 @@ let AppRouter = () => {
     });
     return () => unsubscribe();
   }, []);
-
-    },[])
     return(
         <BrowserRouter>
         <Routes>
