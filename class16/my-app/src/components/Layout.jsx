@@ -9,6 +9,7 @@ import {
   VideoCameraOutlined,
   LoginOutlined
 } from '@ant-design/icons';
+import { useNavigate } from 'react-router-dom';
 import { Button, Layout, Menu, theme } from 'antd';
 const { Header, Sider, Content } = Layout;
 const AppLayout = ({children}) => {
@@ -26,6 +27,7 @@ signOut(auth).then(() => {
   console.log("An error happened")
 });
   }
+  const navigate = useNavigate()
   return (
     <Layout style={{width: "100%", height: "100vh"}}>
       <Sider trigger={null} collapsible collapsed={collapsed}>
@@ -52,8 +54,14 @@ signOut(auth).then(() => {
               icon: <UploadOutlined />,
               label: 'nav 3',
             },
-            {
+             {
               key: '4',
+              icon: <UserOutlined />,
+              label: 'User',
+              onClick: ()=> navigate('/user')
+            },
+            {
+              key: '5',
               icon: <LoginOutlined />,
               label: 'Logout',
               onClick: ()=> LogOut()

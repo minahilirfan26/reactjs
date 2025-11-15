@@ -6,6 +6,7 @@ import { auth,onAuthStateChanged } from "../config/firebase";
 import { useEffect, useState } from "react";
 import AppLayout from "../components/Layout";
 import Portfolio from "../components/Portfolio";
+import Users from "../components/Users";
 
 let AppRouter = () => {
     let [user , setUser] = useState(false)
@@ -27,11 +28,16 @@ let AppRouter = () => {
         <Routes>
             <Route path="/" element={user ? <Navigate to='/profile'/> : <Login/> }/>
             <Route path="/signup" element={user ? <Navigate to='/profile'/> : <SignUp/>}/>
-            <Route path="/profile" element={user ? <AppLayout>
-                <Profile/>
-            </AppLayout> : <Navigate to='/'/>} >
-<Route path="portfolio" element={<Portfolio/>}/>
-            </Route>
+            <Route path="/profile" element={user ? 
+<Profile/>
+: <Navigate to='/'/>} />
+<Route path="/user" element={user ? 
+<Users/>
+: <Navigate to='/'/>}/>
+  
+            {/* <Route path="/profile" element={<Profile/>}>
+<Route path="users" element={<Users/>}/>
+            </Route> */}
         </Routes>
         </BrowserRouter>
     )

@@ -1,0 +1,35 @@
+$text-color: #4a4a4a;
+$bg-color: #f4f4f4;
+
+body{
+    background-color: $bg-color;
+}
+.container{
+    width: 100%;
+}
+
+.Header-bar{
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 60px;
+    // gap: 80px;
+    .logo{}
+    .links{
+        ul{
+            display: flex;
+            gap: 60px;
+            list-style: none;
+
+            li{
+    font-size: 14px;
+    font-weight: 400;
+    color: $text-color;
+    font-family: 'Open Sans', sans-serif;
+            }
+            .btn{
+                color: #638eff;
+                font-weight: 700;
+            }
+        }
+    }
+}

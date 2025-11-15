@@ -1,7 +1,14 @@
+import { Outlet } from "react-router-dom";
+import AppLayout from "../components/Layout";
 function Profile(){
     return(
         <div>
-            <h1>Profile page</h1>
+            <AppLayout>
+                <h1>Profile page</h1>
+            </AppLayout>
+           {/* <div>
+            
+           </div> */}
         </div>
     )
 }
