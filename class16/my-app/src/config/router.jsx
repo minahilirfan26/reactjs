@@ -9,20 +9,13 @@ import Portfolio from "../components/Portfolio";
 import Users from "../components/Users";
 
 let AppRouter = () => {
-    let [user , setUser] = useState(false)
-    useEffect(()=>{
-        onAuthStateChanged(auth, (user) => {
-  if (user) {
-    const uid = user.uid;
-    setUser(true)
-    // ...
-  } else {
-    // User is signed out
-    // ...
-    setUser(false)
-  }
-});
-    },[])
+    let [user , setUser] = useState(null)
+    useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(!!currentUser);
+    });
+    return () => unsubscribe();
+  }, []);
     return(
         <BrowserRouter>
         <Routes>
