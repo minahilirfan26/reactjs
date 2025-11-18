@@ -1,6 +1,15 @@
+import Text_Color from '../../assets/image/text-color.svg'
+import Text_Grey from '../../assets/image/text-grey.svg'
+import Files_Color from '../../assets/image/files-color.svg'
+import Files_Grey from '../../assets/image/files-grey.svg'
 import Logo from '../../assets/image/logo.svg'
 import './style.scss'
+import { useState } from 'react'
+import TextArea from '../../components/TextArea'
+import MainBtn from '../../components/Button'
+
 function HomePage(){
+    let [type, setType] = useState("text")
     return(
 <div className="container">
 <div className="Header-bar">
@@ -16,6 +25,34 @@ function HomePage(){
         <li className='btn'>Login / Register</li>
     </ul>
 </div>
+</div>
+<div className='card-container'>
+<div className='img-area'>
+    <div onClick={()=> setType("text")}>
+        <img  src={ type === "text" ? Text_Color : Text_Grey} alt="" />
+    </div>
+    <div onClick={()=> setType("files")}>
+        <img src={type === "files" ? Files_Color : Files_Grey} alt="" />
+    </div>
+</div>
+<div className='text-aera'>
+   { type === "text" ?
+    <div>
+        Text
+        <div className='input'>
+    <TextArea/>
+</div>
+    </div> :
+    <div>
+        Files
+    </div>
+    }
+    
+</div>
+<div className='btn-container'>
+<MainBtn title={"Save"}/>
+</div>
+
 </div>
 </div>
     )
