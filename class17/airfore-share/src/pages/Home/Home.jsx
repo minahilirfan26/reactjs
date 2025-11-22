@@ -7,9 +7,11 @@ import './style.scss'
 import { useState } from 'react'
 import TextArea from '../../components/TextArea'
 import MainBtn from '../../components/Button'
+import MyDropzone from '../../components/Dropzone'
 
 function HomePage(){
     let [type, setType] = useState("text")
+    let [text, setText] = useState("")
     return(
 <div className="container">
 <div className="Header-bar">
@@ -40,17 +42,20 @@ function HomePage(){
     <div>
         Text
         <div className='input'>
-    <TextArea/>
+    <TextArea value={text}  onChange={(e)=> setText(e.target.value)}/>
 </div>
     </div> :
     <div>
         Files
+        <div >
+            <MyDropzone/>
+        </div>
     </div>
     }
     
 </div>
 <div className='btn-container'>
-<MainBtn title={"Save"}/>
+<MainBtn disabled={!text} title={"Save"}/>
 </div>
 
 </div>

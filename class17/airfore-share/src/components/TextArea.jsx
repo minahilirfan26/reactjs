@@ -1,8 +1,8 @@
 import './index.scss'
 
-function TextArea(){
+function TextArea({onChange}){
 return(
-    <textarea className='input-box' placeholder="Type something..."></textarea>
+    <textarea className='input-box' onChange={onChange} placeholder="Type something..."></textarea>
 )
 }
 
