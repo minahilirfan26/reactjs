@@ -9,7 +9,7 @@ function MyDropzone() {
   const {getRootProps, getInputProps, isDragActive} = useDropzone({onDrop})
 
   return (
-    <div {...getRootProps()}>
+    <div  className='dropzone" '{...getRootProps()}>
       <input className='input-btn' {...getInputProps()} />
       <div className='droper'>
         
