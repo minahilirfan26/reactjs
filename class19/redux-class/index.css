@@ -11,3 +11,21 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.counter{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: center;
+
+}
+.counter button{
+  padding: 0.5rem 1rem;
+  border: none;
+  color: white;
+}
+.counter button:first-of-type{
+  background-color: rgb(9, 89, 249);
+}
+.counter button:last-of-type{
+  background-color: rgb(255, 54, 54);
+}

@@ -3,7 +3,6 @@ import './App.css';
 import Home from './pages/Home';
 import { Provider } from 'react-redux';
 import store from './store';
-import counter from '../store/reducer/counter'
 
 function App() {
   return (
